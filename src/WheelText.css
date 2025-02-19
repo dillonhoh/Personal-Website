@@ -1,0 +1,14 @@
+.wheel-container {
+    display: flex;
+    justify-content: center;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+.main-image {
+    width: 800px;
+    height: auto;
+    border-radius: 18px;
+}
+.image-container {
+    display: flex;
+}
