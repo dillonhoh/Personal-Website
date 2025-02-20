@@ -9,7 +9,7 @@ export default function LifeWheel() {
         {text: "I'm a Dancer", 
         image: "../src/assets/dancer.jpg"
         }, 
-        {text: "I'm   Dillon", 
+        {text: "I'm Dillon", 
         image: "../src/assets/dillon.jpg"
         },
         {text: "I'm a Software Engineer", 
@@ -26,30 +26,30 @@ export default function LifeWheel() {
 
     return(
     <>
-        <div className="image-container">
+    <div className="life-wheel">
+        <span className="image-container">
         <img className="main-image" src={textArray[currentIndex].image} alt={textArray[currentIndex].text}/>        
-        </div>
-        <div className="wheel-container">
-            <div className="wheel-text">
+        </span>
+        <span className="wheel-container">
                     {/* Previous items */}
-                <div className="wheel-item" onClick={() => handleClick((currentIndex + 3) % textArray.length)}>
+                <div className="wheel-item1" onClick={() => handleClick((currentIndex + 3) % textArray.length)}>
                     {textArray[(currentIndex + 3) % textArray.length].text}</div>
 
-                <div className="wheel-item" onClick={() => handleClick((currentIndex + 4) % textArray.length)}>
+                <div className="wheel-item2" onClick={() => handleClick((currentIndex + 4) % textArray.length)}>
                     {textArray[(currentIndex + 4) % textArray.length].text}</div>
                 
                     {/* Main item */}
-                <div className="main-text">{textArray[currentIndex].text}
+                <div className="main-text3">{textArray[currentIndex].text}
                     </div>
 
                     {/* Next items */}
-                <div className="wheel-item" onClick={() => handleClick((currentIndex + 1) % textArray.length)}>
+                <div className="wheel-item4" onClick={() => handleClick((currentIndex + 1) % textArray.length)}>
                     {textArray[(currentIndex + 1) % textArray.length].text}</div>
 
-                <div className="wheel-item" onClick={() => handleClick((currentIndex + 2) % textArray.length)}>
+                <div className="wheel-item5" onClick={() => handleClick((currentIndex + 2) % textArray.length)}>
                     {textArray[(currentIndex + 2) % textArray.length].text}</div>
-            </div>
-        </div>
+        </span>
+    </div>
     </>
     )
 }
