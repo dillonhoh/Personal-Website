@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect} from 'react'
 
 export default function LifeWheel() {
     
@@ -20,34 +20,47 @@ export default function LifeWheel() {
         }];
   
     const [currentIndex, setCurrentIndex] = useState(2);
-    const handleClick = (clickedIndex) => {
-      setCurrentIndex(clickedIndex);
-    }
+    const [previousIndex, setPreviousIndex] = useState(1);
 
+    const handleClick = (clickedIndex) => {
+        if (clickedIndex === currentIndex) return;
+        
+        setPreviousIndex(currentIndex);
+        setCurrentIndex(clickedIndex);
+        
+    };
+    
+    
     return(
     <>
     <div className="life-wheel">
         <span className="image-container">
-        <img className="main-image" src={textArray[currentIndex].image} alt={textArray[currentIndex].text}/>        
+            <img className="active"
+                key={textArray[currentIndex].text}
+                src={textArray[currentIndex].image} 
+                alt={textArray[currentIndex].text}/>      
+
+            <img
+                className="previous"
+                key={textArray[previousIndex].text}
+                src={textArray[previousIndex].image}
+                alt={textArray[previousIndex].text}/>  
         </span>
+        
         <span className="wheel-container">
-                    {/* Previous items */}
-                <div className="wheel-item1" onClick={() => handleClick((currentIndex + 3) % textArray.length)}>
-                    {textArray[(currentIndex + 3) % textArray.length].text}</div>
-
-                <div className="wheel-item2" onClick={() => handleClick((currentIndex + 4) % textArray.length)}>
-                    {textArray[(currentIndex + 4) % textArray.length].text}</div>
-                
-                    {/* Main item */}
-                <div className="main-text3">{textArray[currentIndex].text}
-                    </div>
-
-                    {/* Next items */}
-                <div className="wheel-item4" onClick={() => handleClick((currentIndex + 1) % textArray.length)}>
-                    {textArray[(currentIndex + 1) % textArray.length].text}</div>
-
-                <div className="wheel-item5" onClick={() => handleClick((currentIndex + 2) % textArray.length)}>
-                    {textArray[(currentIndex + 2) % textArray.length].text}</div>
+            {textArray.map((item, index) => {
+                    const distance = (index - currentIndex + textArray.length) % textArray.length;
+                    const className = `wheel-item wheel-item-${distance}`;
+                    return (
+                        <div
+                            key={index}
+                            className={className}
+                            onClick={() => handleClick(index)}
+                        >
+                            {item.text}
+                        </div>
+                    );
+                })}
         </span>
     </div>
     </>

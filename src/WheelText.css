@@ -1,46 +1,82 @@
 @import "tailwindcss";
 
 body {
-    background-color: #000727;
-}
-.wheel-container {
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    width: 570px;
-    margin-left: 100px;
-    display: flex;
-    flex-direction: column;
-    
-}
-.main-image {
-    width: 800px;
-    height: auto;
-    border-radius: 18px;
-    transition: transform 0.5s ease-in-out;
+    background-color: #01061f;
 }
 
-.main-image:hover{
-    transform: scale(1.07);
-}
 .life-wheel {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -100px;
-    margin-top: 100px;
+    position: relative;
+    width: 100%;
+    top: 150px;
 }
-.wheel-item1, .wheel-item5 {
-    font-size: 35px;
-    opacity: 0.25;
+
+.image-container {
+    width: 800px; 
+    align-content: center;
+    position: relative;
+    
+}
+.previous {
+    position: absolute;
+    opacity: 0;
+    border-radius: 18px;
+    transition: opacity 0.55s ease-in-out;
+}
+
+.active {
+    border-radius: 18px;
+    position: absolute;
+    opacity: 1;
+    transition: opacity 0.55s ease-in-out;
+}
+
+.wheel-container {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    perspective: 800px;
+    position: relative;
+    top: 200px;
+}
+.wheel-item {
+    position: absolute;
+    transition: all 0.6s ease-in-out;
+}
+.wheel-item-0 {
+    font-size: 55px;
+    opacity: 1;
+    transform: translateY(0);
     color: #E6D8C7
 }
-.wheel-item2, .wheel-item4 {
+.wheel-item-3 {
+    font-size: 32px;
+    opacity: 0.25;
+    transform: translateY(-66px);
+    color: #E6D8C7
+}
+.wheel-item-4 {
     font-size: 40px;
     opacity: 0.43;
+    transform: translateY(-36px);
     color: #E6D8C7
 }
-.main-text3 {
-    font-size: 47px;
-    margin-left: -0.4px;
+.wheel-item-1{
+    font-size: 40px;
+    opacity: 0.43;
+    transform: translateY(60px);
     color: #E6D8C7
+}
+.wheel-item-2{
+    font-size: 32px;
+    opacity: 0.25;
+    transform: translateY(101px);
+    color: #E6D8C7
+}
+.wheel-container div:hover {
+    cursor: pointer;
 }
