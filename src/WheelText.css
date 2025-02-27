@@ -17,21 +17,27 @@ body {
     width: 800px; 
     align-content: center;
     position: relative;
+}
+.active {
+    border-radius: 18px;
+    opacity: 1;
+    transition: opacity 0.35s ease-in-out;
+    position: absolute;
+}
+.active.in-transition {
+    opacity: 0;
     
 }
 .previous {
-    position: absolute;
     opacity: 0;
     border-radius: 18px;
-    transition: opacity 0.55s ease-in-out;
+    transition: opacity 0.35s ease-in-out;
+    position: absolute;
+}
+.previous.in-transition {
+    opacity: 1;
 }
 
-.active {
-    border-radius: 18px;
-    position: absolute;
-    opacity: 1;
-    transition: opacity 0.55s ease-in-out;
-}
 
 .wheel-container {
     font-family: Helvetica, Arial, sans-serif;

@@ -21,27 +21,33 @@ export default function LifeWheel() {
   
     const [currentIndex, setCurrentIndex] = useState(2);
     const [previousIndex, setPreviousIndex] = useState(1);
+    const [fadeIn, setFadeIn] = useState(false);
 
     const handleClick = (clickedIndex) => {
         if (clickedIndex === currentIndex) return;
         
         setPreviousIndex(currentIndex);
+        setFadeIn(true);
         setCurrentIndex(clickedIndex);
         
+        setTimeout(() => {
+            setFadeIn(false);
+          }, 100);
     };
+
     
-    
+
     return(
     <>
     <div className="life-wheel">
         <span className="image-container">
-            <img className="active"
+            <img className={`active ${fadeIn ? "in-transition" : "" }`}
                 key={textArray[currentIndex].text}
                 src={textArray[currentIndex].image} 
                 alt={textArray[currentIndex].text}/>      
 
             <img
-                className="previous"
+                className={`previous ${fadeIn ? "in-transition" : "" }`}
                 key={textArray[previousIndex].text}
                 src={textArray[previousIndex].image}
                 alt={textArray[previousIndex].text}/>  
