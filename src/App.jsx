@@ -8,7 +8,7 @@ import ButtonMap from './components/ButtonMap.jsx';
 
 export default function App() {
   return (
-    <div className="app-container m-0 p-0">
+    <div className="app-container ">
       <LifeWheel />
       <Intro />
       <ButtonMap />

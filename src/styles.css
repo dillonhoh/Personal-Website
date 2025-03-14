@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 43px
 }
 body {
@@ -103,6 +104,27 @@ body {
     justify-content: center;
     align-content: center;
 }
-.button {
-    color: white;
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttonSubText{
+    margin-top: -30px;
+}
+
+
+.buttons, .buttonSubText, .buttonText {
+    transition: background-color 1s, color 1s;
+}
+.buttons:hover{
+    background-color: #E6D8C7;
+}
+.buttons:hover .buttonSubText {
+    color: transparent;
+}
+.buttons:hover .buttonText {
+    color: #171826;
 }
