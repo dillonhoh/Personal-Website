@@ -117,10 +117,12 @@ body {
 
 
 .buttons, .buttonSubText, .buttonText {
-    transition: background-color 1s, color 1s;
+    transition: background-color 1s, color 1s, scale 0.5s;
+
 }
 .buttons:hover{
     background-color: #E6D8C7;
+    scale: 1.08;
 }
 .buttons:hover .buttonSubText {
     color: transparent;
