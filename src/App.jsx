@@ -5,6 +5,7 @@ import './styles.css';
 import LifeWheel from './components/LifeWheel.jsx'
 import Intro from './components/Intro.jsx'
 import ButtonMap from './components/ButtonMap.jsx';
+import ContactDisplay from './components/ContactDisplay';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <LifeWheel />
       <Intro />
       <ButtonMap />
+      <ContactDisplay />
     </div>
   )
 };
