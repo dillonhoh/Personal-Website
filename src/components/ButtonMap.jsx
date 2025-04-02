@@ -39,7 +39,7 @@ export default function ButtonMap () {
                 <Buttons 
                     subText ="watch my "
                     text ="dance videos"
-                    link="https://www.google.ca/maps/place/Los+Angeles,+CA/@34.0200393,-118.7413578,10z/data=!3m1!4b1!4m6!3m5!1s0x80c2c75ddc27da13:0xe22fdf6f254608f4!8m2!3d34.0549076!4d-118.242643!16s%2Fm%2F030qb3t?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D"
+                    link="https://youtube.com/playlist?list=PL8vo5HJwlvg8q7N25C-Zb81IDvgf8AybB&si=R3-s1oV9yXxfDne-"
                     name="col-span-4 row-span-3"
                     />
                 <Buttons 
@@ -51,7 +51,7 @@ export default function ButtonMap () {
                 <Buttons 
                     subText ="and this is my"
                     text ="github"
-                    link="https://www.google.ca/maps/place/Los+Angeles,+CA/@34.0200393,-118.7413578,10z/data=!3m1!4b1!4m6!3m5!1s0x80c2c75ddc27da13:0xe22fdf6f254608f4!8m2!3d34.0549076!4d-118.242643!16s%2Fm%2F030qb3t?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D"
+                    link="https://github.com/dillonhoh"
                     name="col-span-6 row-span-3"
                     />
             </div>
