@@ -1,13 +1,12 @@
-export default function ContactText(){
+import ContactText from "./ContactText"
+import ContactForm from "./ContactForm"
+export default function ContactDisplay(){
 
 
     return(
-        <>
-            <div>let's get in touch</div>
-                    <h1>dhoh001@ucr.edu</h1>
-            
-                
-        </>
-
+        <div className="contact-display">
+            <ContactText />
+            <ContactForm />
+        </div>
     )
 }

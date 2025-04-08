@@ -14,7 +14,7 @@ export default function ButtonMap () {
                 <Buttons 
                     subText ="come look at my"
                     text ="projects"
-                    link="https://www.depop.com/mojoh/"
+                    link="https://github.com/dillonhoh?tab=repositories"
                     name="col-span-6 row-span-3"
                     />
                 <Buttons 
@@ -33,7 +33,7 @@ export default function ButtonMap () {
                 <Buttons 
                     subText ="this is my"
                     text ="resume"
-                    link="https://www.google.ca/maps/place/Los+Angeles,+CA/@34.0200393,-118.7413578,10z/data=!3m1!4b1!4m6!3m5!1s0x80c2c75ddc27da13:0xe22fdf6f254608f4!8m2!3d34.0549076!4d-118.242643!16s%2Fm%2F030qb3t?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D"
+                    link="/ResumeDillon2024.pdf"
                     name="col-span-4 row-span-3"
                     />
                 <Buttons 

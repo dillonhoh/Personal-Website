@@ -130,3 +130,31 @@ body {
 .buttons:hover .buttonText {
     color: #171826;
 }
+.contact-display {
+    display: flex;
+    margin-top: 100px;
+    align-items: center;
+}
+
+.contact-text {
+    text-align: center;
+    display: inline-block
+}
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    color: #E6D8C7;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+.line1 {
+    background: white;
+}
+
+.contact::placeholder {
+    font-weight: 100;
+    font-size: 27px;
+}
