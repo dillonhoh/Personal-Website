@@ -31,7 +31,7 @@ export default function ButtonMap () {
                     name="col-span-4 row-span-3"
                     />
                 <Buttons 
-                    subText ="this is my"
+                    subText ="review my"
                     text ="resume"
                     link="/ResumeDillon2024.pdf"
                     name="col-span-4 row-span-3"
@@ -43,7 +43,7 @@ export default function ButtonMap () {
                     name="col-span-4 row-span-3"
                     />
                 <Buttons 
-                    subText ="this is my"
+                    subText ="let's connect on"
                     text ="linkedIn"
                     link="https://www.linkedin.com/in/dillonhoh/"
                     name="col-span-6 row-span-3"

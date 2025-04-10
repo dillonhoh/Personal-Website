@@ -132,7 +132,8 @@ body {
 }
 .contact-display {
     display: flex;
-    margin-top: 100px;
+    flex-direction: column;
+    margin-top: 50px;
     align-items: center;
 }
 
@@ -155,6 +156,7 @@ body {
 }
 
 .contact::placeholder {
-    font-weight: 100;
+    font-weight: 300;
     font-size: 27px;
+    opacity: 80%;
 }
