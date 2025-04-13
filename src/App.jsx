@@ -6,12 +6,12 @@ import LifeWheel from './components/LifeWheel.jsx'
 import Intro from './components/Intro.jsx'
 import ButtonMap from './components/ButtonMap.jsx';
 import ContactDisplay from './components/ContactDisplay';
-import Copyright
- from './components/Copyright.jsx';
+import Copyright from './components/Copyright.jsx';
+import Start from './components/Start';
 export default function App() {
   return (
     <div className="app-container ">
-      <LifeWheel />
+      <Start />
       <Intro />
       <ButtonMap />
       <ContactDisplay />
