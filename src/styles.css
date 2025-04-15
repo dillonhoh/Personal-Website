@@ -21,10 +21,28 @@ body {
     transform-origin: right;
     transition: opacity 0.35s ease-in-out, scale 0.35s ease-in-out;
 }
+.styles-container {
+    border-left: 2px solid #E6D8C7;
+    margin-top: -4px;
+}
+.blinkingActive {
+    animation: blinkColor 1.4s infinite;
+  }
+  
+  @keyframes blinkColor {
+    0%   { color: #E6D8C7; }
+    50%  { color: red; }
+    100% { color: #E6D8C7; }
+  }
+.blinkingStopped {
+    animation: none;
+    color: #E6D8C7;
+    opacity: 60%;
+}
 
 .title {
     color: white;
-    text-align: center;
+    text-align: ceAnter;
     justify-content: center;
     align-content: center;
 }
