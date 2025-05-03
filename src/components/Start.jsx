@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Start() {
 
@@ -15,32 +15,60 @@ export default function Start() {
         {text: "Snowboarder", 
         image: "../src/assets/snowboardercircle.png"
         },
+        {text: "Dillon", 
+            image: "../src/assets/dilloncircle.png"
+            },
         ];
 
-
-
-const [selectedIndex, setSelectedIndex] = useState(5)
+const [previousIndex, setPreviousIndex] = useState(3)
+const [selectedIndex, setSelectedIndex] = useState(4)
 const [styleChosen, setStyleChosen] = useState(false)
+const [fadeIn, setFadeIn] = useState(false)
+
+useEffect(() => {
+    textimageArray.forEach(item => {
+        const img = new Image();
+        img.src = item.image;
+    });
+}, []);
 
 const handleClick = (clickedIndex) => {
     if (clickedIndex == selectedIndex) {
+        setPreviousIndex(selectedIndex);
+        setFadeIn(true);
         setStyleChosen(false);
-        setSelectedIndex(5);
+        setSelectedIndex(4);
+        setTimeout(() => {
+            setFadeIn(false);
+          }, 400);
         return
     }
+    setFadeIn(true);
+    setPreviousIndex(selectedIndex);
     setStyleChosen(true);
     setSelectedIndex(clickedIndex);
+
+    setTimeout(() => {
+        setFadeIn(false);
+      }, 100);
 }
 
     return(
         <>
             <div className="flex items-center mt-[125px] w-6xl justify-evenly caret-transparent ml-[-95px]">
-                <div className="flex" >
+                <div className="relative" >
+                    <img 
+                    key={previousIndex}
+                    src={textimageArray[previousIndex].image} 
+                    alt={textimageArray[previousIndex].text} 
+                    className={`absolute previous-picture h-[425px] ${fadeIn ? "in-transition" : "" }`}/>
+                    
                     <img 
                     key={selectedIndex}
-                    src={textimageArray[selectedIndex] ? textimageArray[selectedIndex].image : "../src/assets/dilloncircle.png"} 
-                    alt="startPhoto"
-                    className={`start-picture h-[425px] ${ textimageArray[selectedIndex] ? 'active-picture' : ''} opacity-90`}/>
+                    src={textimageArray[selectedIndex].image} 
+                    alt={textimageArray[selectedIndex].text} 
+                    className={`active-picture h-[425px] ${fadeIn ? "in-transition" : "" }`}/>
+                    
                 </div>
 
                 <div className="start-text flex-col text-right">
@@ -50,7 +78,7 @@ const handleClick = (clickedIndex) => {
                     <hr className="my-1 border-[#E6D8C7] border-t-2" />
                     <div className="styles-container">
                     <hr className="my-1 border-[transparent" />
-                    {textimageArray.map((item, index) => (
+                    {textimageArray.slice(0, 4).map((item, index) => (
                         <div
                             key={index}
                             className={`text-item ${selectedIndex === index ? 'active' : ''} text-[#E6D8C7] text-xl font-semibold opacity-[50%] cursor-pointer mt-[3px]`}

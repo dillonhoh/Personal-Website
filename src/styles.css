@@ -10,6 +10,20 @@
 body {
     background-color: #171826;
 }
+.active-picture {
+    opacity: 1;
+    transition: opacity 0.35s ease-in-out, transform 1s ease-in-out;
+}
+.active-picture .in-transition {
+    opacity: 0;
+}
+.previous-picture {
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+}
+.previous-picture .in-transition {
+    opacity: 1;
+}
 
 .active {
     opacity: 1;

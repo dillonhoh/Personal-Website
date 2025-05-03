@@ -23,7 +23,7 @@ export default function ContactForm(){
                 cols="10"
                 maxlength="350"
                 className="contact border rounded-lg focus: outline-none focus:border-[#A6D8C7] px-3 py-3 pt-2"/>
-            <button className="font-semibold text-4xl my-[10px]">SEND</button>
+            <button className="font-semibold text-4xl my-[10px] cursor-pointer">SEND</button>
 
         </form>
         </>
