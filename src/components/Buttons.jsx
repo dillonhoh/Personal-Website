@@ -6,6 +6,7 @@ export default function Buttons ({ subText, text, link, name}) {
         >
             <h2 className="buttonSubText text-white text-2xl opacity-40">{subText}</h2>
             <h1 className="buttonText text-[#E6D8C7] text-4xl">{text}</h1>
+            
         </button>
     )
 }

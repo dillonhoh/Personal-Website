@@ -25,50 +25,35 @@ const [selectedIndex, setSelectedIndex] = useState(4)
 const [styleChosen, setStyleChosen] = useState(false)
 const [fadeIn, setFadeIn] = useState(false)
 
-useEffect(() => {
-    textimageArray.forEach(item => {
-        const img = new Image();
-        img.src = item.image;
-    });
-}, []);
-
 const handleClick = (clickedIndex) => {
-    if (clickedIndex == selectedIndex) {
-        setPreviousIndex(selectedIndex);
-        setFadeIn(true);
-        setStyleChosen(false);
+    if (clickedIndex === selectedIndex) {
+      setFadeIn(true);
+      setStyleChosen(false);
+      setTimeout(() => {
         setSelectedIndex(4);
-        setTimeout(() => {
-            setFadeIn(false);
-          }, 400);
-        return
-    }
-    setFadeIn(true);
-    setPreviousIndex(selectedIndex);
-    setStyleChosen(true);
-    setSelectedIndex(clickedIndex);
-
-    setTimeout(() => {
         setFadeIn(false);
-      }, 100);
-}
+      }, 185); // Match your transition duration
+      return;
+    }
+  
+    setFadeIn(true);
+    setStyleChosen(true);
+  
+    setTimeout(() => {
+      setSelectedIndex(clickedIndex);
+      setFadeIn(false);
+    }, 185); // Match your CSS transition
+  };
 
     return(
         <>
             <div className="flex items-center mt-[125px] w-6xl justify-evenly caret-transparent ml-[-95px]">
                 <div className="relative" >
                     <img 
-                    key={previousIndex}
-                    src={textimageArray[previousIndex].image} 
-                    alt={textimageArray[previousIndex].text} 
-                    className={`absolute previous-picture h-[425px] ${fadeIn ? "in-transition" : "" }`}/>
-                    
-                    <img 
-                    key={selectedIndex}
-                    src={textimageArray[selectedIndex].image} 
-                    alt={textimageArray[selectedIndex].text} 
-                    className={`active-picture h-[425px] ${fadeIn ? "in-transition" : "" }`}/>
-                    
+                    src={textimageArray[selectedIndex].image}
+                    alt={textimageArray[selectedIndex].text}
+                    className={`transition-image h-[425px] ${fadeIn ? "fade-in" : ""}`}
+                    />
                 </div>
 
                 <div className="start-text flex-col text-right">
@@ -77,7 +62,7 @@ const handleClick = (clickedIndex) => {
                     <hr className="my-1 border-[#E6D8C7] border-t-2" />
                     <hr className="my-1 border-[#E6D8C7] border-t-2" />
                     <div className="styles-container">
-                    <hr className="my-1 border-[transparent" />
+                    <hr className="my-1 border-[transparent]" />
                     {textimageArray.slice(0, 4).map((item, index) => (
                         <div
                             key={index}

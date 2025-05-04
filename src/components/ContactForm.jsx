@@ -3,9 +3,11 @@ export default function ContactForm(){
 
 
     return(
-        <>
-        <div className="text-[#E6D8C7] text-6xl font-bold pb-10">let's get in touch</div>
-        <form className="contact-form text-[#E6D8C7] text-[27px] font-thin">
+        
+        <div className="contact-display border-[#E6D8C7] border-t-2 border-l-2 ">
+        <div className="text-[#E6D8C7] text-6xl font-bold pb-10 mt-[28px] ml-[30px]">let's get in touch</div>
+        
+        <form className="contact-form text-[#E6D8C7] text-[27px] font-thin ml-[30px]">
             <label className="font-semibold text-4xl my-[10px]">NAME</label>
             <input type="text" 
                 placeholder ="Jon Doe" 
@@ -26,7 +28,7 @@ export default function ContactForm(){
             <button className="font-semibold text-4xl my-[10px] cursor-pointer">SEND</button>
 
         </form>
-        </>
+        </div>
 
     )
 }
